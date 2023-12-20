@@ -1,0 +1,54 @@
+{
+    "version": 0.1,
+    "skill": [
+        {"id": 0, "name": "Блок расчета фундаментов производит расчет"},
+        {"id": 1, "name": "Блок расчета рам и элементов каркаса производит расче"},
+        {"id": 2, "name": "Блок расчета плит и балок на упругом основании производит расчет"},
+        {"id": 3, "name": "Блок специальных расчетов производит расчет"},
+        {"id": 4, "name": "Блок расчетов архитектора производит расчет"},
+        {"id": 5, "name": "Блок справочник-калькулятор производит расчет"}
+    ],
+    "country": [
+        {"id": 0, "name": "Россия"},
+        {"id": 1, "name": "США"},
+        {"id": 2, "name": "Украина"}
+    ],
+    "program": [
+        {
+            "name": "base", 
+            "system_requirements": "Память: 1 ГБ<br>Видеокарта: ATI FireGL T2-128<br>Процессор: Intel Pentium 4 1,40 ГГц<br>Размер файла: 30 МБ<br>ОС: Microsoft® Windows® XP/Vista/7/10",
+            "availability": true,
+            "features": [0,1,2],
+            "cost": "68 500,00 рублей на 1 пользователя",
+            "country": "Россия",
+            "website": "http://www.basegroup.su/index.php?Page=base.html"
+        },
+        {
+            "name": "Autocad", 
+            "system_requirements": "Процессор: с тактовой частотой выше 3 ГГц<br>Видеокарта: с 4 ГБ видеопамяти и поддержкой DirectX 11<br>Оперативная память: 16 ГБ<br>Место на диске: 7 ГБ<br>Операционная система: Windows 8.1 / 10 64-разрядная",
+            "availability": false,
+            "features": [0, 3, 4, 5],
+            "cost": "$ 5925/ выплачивается каждые 3 года<br>$ 1,975/ выплачивается ежегодно<br>$ 245/ оплачивается ежемесячно<br>$ 1,975 / год за 1 пользователя",
+            "country": "США",
+            "website": "https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription"
+        },
+        {
+            "name": "Autocad 2", 
+            "system_requirements": "Процессор: с тактовой частотой выше 3 ГГц<br>Видеокарта: с 4 ГБ видеопамяти и поддержкой DirectX 11<br>Оперативная память: 16 ГБ<br>Место на диске: 7 ГБ<br>Операционная система: Windows 8.1 / 10 64-разрядная",
+            "availability": false,
+            "features": [0, 3, 4, 5],
+            "cost": "$ 5925/ выплачивается каждые 3 года<br>$ 1,975/ выплачивается ежегодно<br>$ 245/ оплачивается ежемесячно<br>$ 1,975 / год за 1 пользователя",
+            "country": "США",
+            "website": "https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription"
+        },
+        {
+            "name": "base 2", 
+            "system_requirements": "Память: 1 ГБ<br>Видеокарта: ATI FireGL T2-128<br>Процессор: Intel Pentium 4 1,40 ГГц<br>Размер файла: 30 МБ<br>ОС: Microsoft® Windows® XP/Vista/7/10",
+            "availability": true,
+            "features": [0,1,2],
+            "cost": "68 500,00 рублей на 1 пользователя",
+            "country": "Россия",
+            "website": "http://www.basegroup.su/index.php?Page=base.html"
+        }
+    ]
+}
