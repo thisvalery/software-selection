@@ -15,40 +15,48 @@
     ],
     "program": [
         {
+            "id": 0,
             "name": "base", 
-            "system_requirements": "Память: 1 ГБ<br>Видеокарта: ATI FireGL T2-128<br>Процессор: Intel Pentium 4 1,40 ГГц<br>Размер файла: 30 МБ<br>ОС: Microsoft® Windows® XP/Vista/7/10",
+            "system_requirements": "<div class=\"spec__row\"><div class=\"spec__name\">Память</div><div class=\"spec__value\">1 ГБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">Видеокарта</div><div class=\"spec__value\">ATI FireGL T2-128</div></div><div class=\"spec__row\"><div class=\"spec__name\">Процессор</div><div class=\"spec__value\">Intel Pentium 4 1,40 ГГц</div></div><div class=\"spec__row\"><div class=\"spec__name\">Размер файла</div><div class=\"spec__value\">30 МБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">ОС</div><div class=\"spec__value\">Microsoft® Windows® XP/Vista/7/10</div></div>",
             "availability": true,
             "features": [0,1,2],
             "cost": "68 500,00 рублей на 1 пользователя",
             "country": "Россия",
-            "website": "http://www.basegroup.su/index.php?Page=base.html"
+            "website": "http://www.basegroup.su/index.php?Page=base.html",
+            "description": "Программа BASE - это система общестроительных расчетов, состоит из 6 блоков и приложения. Полной версией программы считаются 6 основных блоков, приложение нужно заказывать дополнительно. При заказе программы BASE можно выбрать только те блоки, которые содержат необходимые функции расчета."
         },
         {
+            "id": 1,
             "name": "Autocad", 
-            "system_requirements": "Процессор: с тактовой частотой выше 3 ГГц<br>Видеокарта: с 4 ГБ видеопамяти и поддержкой DirectX 11<br>Оперативная память: 16 ГБ<br>Место на диске: 7 ГБ<br>Операционная система: Windows 8.1 / 10 64-разрядная",
+            "system_requirements": "<div class=\"spec__row\"><div class=\"spec__name\">Процессор</div><div class=\"spec__value\">с тактовой частотой выше 3 ГГц</div></div><div class=\"spec__row\"><div class=\"spec__name\">Видеокарта</div><div class=\"spec__value\">с 4 ГБ видеопамяти и поддержкой DirectX 11</div></div><div class=\"spec__row\"><div class=\"spec__name\">Оперативная память</div><div class=\"spec__value\">16 ГБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">Место на диске</div><div class=\"spec__value\">7 ГБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">Операционная система</div><div class=\"spec__value\">Windows 8.1 / 10 64-разрядная</div></div>",
             "availability": false,
             "features": [0, 3, 4, 5],
             "cost": "$ 5925/ выплачивается каждые 3 года<br>$ 1,975/ выплачивается ежегодно<br>$ 245/ оплачивается ежемесячно<br>$ 1,975 / год за 1 пользователя",
             "country": "США",
-            "website": "https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription"
+            "website": "https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription",
+            "description": "description description description description"
         },
         {
+            "id": 2,
             "name": "Autocad 2", 
-            "system_requirements": "Процессор: с тактовой частотой выше 3 ГГц<br>Видеокарта: с 4 ГБ видеопамяти и поддержкой DirectX 11<br>Оперативная память: 16 ГБ<br>Место на диске: 7 ГБ<br>Операционная система: Windows 8.1 / 10 64-разрядная",
+            "system_requirements": "<div class=\"spec__row\"><div class=\"spec__name\">Процессор</div><div class=\"spec__value\">с тактовой частотой выше 3 ГГц</div></div><div class=\"spec__row\"><div class=\"spec__name\">Видеокарта</div><div class=\"spec__value\">с 4 ГБ видеопамяти и поддержкой DirectX 11Оперативная память: 16 ГБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">Место на диске</div><div class=\"spec__value\">7 ГБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">Операционная система</div><div class=\"spec__value\">Windows 8.1 / 10 64-разрядная</div></div>",
             "availability": false,
             "features": [0, 3, 4, 5],
             "cost": "$ 5925/ выплачивается каждые 3 года<br>$ 1,975/ выплачивается ежегодно<br>$ 245/ оплачивается ежемесячно<br>$ 1,975 / год за 1 пользователя",
             "country": "США",
-            "website": "https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription"
+            "website": "https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription",
+            "description": "description description description description"
         },
         {
+            "id": 3,
             "name": "base 2", 
-            "system_requirements": "Память: 1 ГБ<br>Видеокарта: ATI FireGL T2-128<br>Процессор: Intel Pentium 4 1,40 ГГц<br>Размер файла: 30 МБ<br>ОС: Microsoft® Windows® XP/Vista/7/10",
+            "system_requirements": "<div class=\"spec__row\"><div class=\"spec__name\">Память</div><div class=\"spec__value\">1 ГБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">Видеокарта</div><div class=\"spec__value\">ATI FireGL T2-128</div></div><div class=\"spec__row\"><div class=\"spec__name\">Процессор</div><div class=\"spec__value\">Intel Pentium 4 1,40 ГГц</div></div><div class=\"spec__row\"><div class=\"spec__name\">Размер файла</div><div class=\"spec__value\">30 МБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">ОС</div><div class=\"spec__value\">Microsoft® Windows® XP/Vista/7/10</div></div>",
             "availability": true,
             "features": [0,1,2],
             "cost": "68 500,00 рублей на 1 пользователя",
             "country": "Россия",
-            "website": "http://www.basegroup.su/index.php?Page=base.html"
+            "website": "http://www.basegroup.su/index.php?Page=base.html",
+            "description": "description description description description"
         }
     ]
 }
