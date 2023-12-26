@@ -17,6 +17,7 @@ function setDataPage(data) {
 
     activateProduct(data) // Заполнение писка программ
     activateSelect2(data) // Заполнение формы поиска
+    activateSearchForm(getGetParameters())
 }
 
 function getSkills(data) {
@@ -84,7 +85,15 @@ function getGetParameters() {
     var url = new URL(window.location.href);
     let getParam = {}
     url.searchParams.forEach(function (value, name) {
-        getParam[name] = value
+        if (name.indexOf("[]") >= 0) {
+            let clearName = name.replace('[]','')
+            if (!Object.hasOwn(getParam, clearName)) {
+                getParam[clearName] = []
+            }
+            getParam[clearName].push(value)
+        } else {
+            getParam[name] = value
+        }
     })
     console.log('url getParam', getParam)
     return getParam
@@ -115,4 +124,39 @@ function activateSelect2(data) {
     $(function () {
         $('.form-control-select2, .block-finder__form-control--select select').select2({width: ''});
     });
+}
+
+function activateSearchForm(data) {
+    if (Object.hasOwn(data, 'features')) {
+        let features = document.querySelector('select.zv-select-features')
+        for (let f of features.querySelectorAll('option')) {
+            if (data.features.includes(f.value)) {
+                f.selected = true
+            }
+        }
+    }
+    if (Object.hasOwn(data, 'country')) {
+        let country = document.querySelector('select.zv-select-country')
+        for (let f of country.querySelectorAll('option')) {
+            if (data.country == f.value) {
+                f.selected = true
+            }
+        }
+    }
+    if (Object.hasOwn(data, 'availability')) {
+        let availability = document.querySelector('select.zv-select-availability')
+        for (let f of availability.querySelectorAll('option')) {
+            if (data.availability == f.value) {
+                f.selected = true
+            }
+        }
+    }
+    if (Object.hasOwn(data, 'reestr')) {
+        let reestr = document.querySelector('select.zv-select-reestr')
+        for (let f of reestr.querySelectorAll('option')) {
+            if (data.reestr == f.value) {
+                f.selected = true
+            }
+        }
+    }
 }
