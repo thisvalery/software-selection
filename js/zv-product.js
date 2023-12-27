@@ -16,7 +16,7 @@ function setDataPage(data) {
     console.log('[setDataPage]', data)
 
     activateProduct(data) // Заполнение программ для аналогов
-    // activateFeaturesProg(data) // Заполнение возможностей программ
+    activateFeaturesProg(data) // Заполнение похожих программ
     activateSelect2(data) // Заполнение формы поиска
 }
 
@@ -50,19 +50,6 @@ function activateProduct(data) {
     // Заполнение стоимости
     let cost = document.querySelector('#product-tab-reviews') 
     cost.innerHTML = product.cost
-}
-
-function activateAnalog(data) {
-    // Заполнение программ для аналогов
-    let owlCarusel = $('#owl-carousel-1')
-
-    for (let prog of data.program) {
-        let aap = addAnalogProg(prog)
-        owlCarusel.trigger('add.owl.carousel', aap)
-        // place_insertion.append(aap)
-    }
-    owlCarusel.trigger('remove.owl.carousel', [0]) // Удалить первый шаблонный элемент карусели
-    owlCarusel.trigger('refresh.owl.carousel') // Обновить корусель
 }
 
 function getGetParameters() {
@@ -104,4 +91,118 @@ function activateSelect2(data) {
 
 function getIntersection(a, b) {
     return a.filter(x => b.includes(x));
-  }
+}
+
+function getDegreeCompliance(prog, searchParams) {
+    let degree = {
+        count: 0,
+        value: 0,
+        compliance: {
+            features: []
+        }
+    }
+
+    if (Object.hasOwn(searchParams, 'features')) {
+        let f = searchParams.features.map((el) => {return Number(el)})
+        let c = getIntersection(f, prog.features)
+        degree.compliance.features = c
+
+        degree.count += f.length
+        degree.value += c.length
+    }
+    if (Object.hasOwn(searchParams, 'country')) {
+        if (searchParams.country != "none") {
+            degree.count += 1
+            if (Number(searchParams.country) == prog.country) {
+                degree.value += 1
+            }
+        }
+    }
+    if (Object.hasOwn(searchParams, 'availability')) {
+        if (searchParams.availability != "none") {
+            degree.count += 1
+            let av_bool = (searchParams.availability == "true") ? true : false
+            if (av_bool == prog.availability) {
+                degree.value += 1
+            }
+        }
+    }
+    if (Object.hasOwn(searchParams, 'reestr')) {
+        if (searchParams.reestr != "none") {
+            degree.count += 1
+            let r_bool = (searchParams.reestr == "true") ? true : false
+            if (r_bool == prog.reestr) {
+                degree.value += 1
+            }
+        }
+    }
+
+    // console.log('getDegreeCompliance', degree)
+    return degree
+}
+
+function activateFeaturesProg(data) {
+    let owlCarusel2 = $('#owl-carousel-2')
+
+    let getId = getGetParameters().id
+    let product = data.program.find(function (el) {
+        return (el.id == getId)
+    })
+
+    // Ранжирование списка программ по поисковому запросу
+    let mapPrograms = data.program.map((prog) => {
+        prog.compliance = getDegreeCompliance(prog, product)
+        return prog
+    })
+    // Сортировка
+    console.log('mapPrograms', mapPrograms)
+    mapPrograms = mapPrograms.sort((a, b) => {
+        let a_c = a.compliance.value / a.compliance.count
+        let b_c = b.compliance.value / b.compliance.count
+        return (a_c < b_c) ? 1 : -1
+    })
+    // Фильтрация маленьких значений соответствич
+    mapPrograms = mapPrograms.filter((el) => {
+        let procent = 1
+        if (el.compliance.value != 0 && el.compliance.count != 0) {
+            procent = (el.compliance.value / el.compliance.count)
+        }
+        return (procent > 0.6)
+    })
+
+    for (let prog of mapPrograms) {
+        let aap = addFeaturesProg(prog)
+        owlCarusel2.trigger('add.owl.carousel', aap)
+        // place_insertion.append(aap)
+    }
+    owlCarusel2.trigger('remove.owl.carousel', [0]) // Удалить первый шаблонный элемент карусели
+    owlCarusel2.trigger('refresh.owl.carousel') // Обновить корусель
+}
+
+function addFeaturesProg(data) {
+    let analog_prog_template = document.querySelector('.zv-features-prog')
+    let new_ap = analog_prog_template.cloneNode(true)
+
+    // Подстановка названия продукта
+    let procent = 100
+    if (data.compliance.value != 0 && data.compliance.count != 0) {
+        procent = Math.round((data.compliance.value / data.compliance.count) * 100)
+    }
+
+    new_ap.querySelector('.zv-f-src-id').innerHTML = data.id
+    new_ap.querySelector('.zv-f-src-name').innerHTML = `${data.name} (${procent}%)`
+    new_ap.querySelector('.zv-f-src-name').setAttribute('href', `/product.html?id=${data.id}`)
+    new_ap.querySelector('.image__body').setAttribute('href', `/product.html?id=${data.id}`)
+    
+    if (data.country == 0) {
+        new_ap.querySelector(".tag-badge--sale").classList.remove('d-none')
+    }
+    if (data.availability) {
+        new_ap.querySelector(".tag-badge--new").classList.remove('d-none')
+    }
+    if (data.reestr) {
+        new_ap.querySelector(".tag-badge--hot").classList.remove('d-none')
+    }
+
+    return new_ap
+}
