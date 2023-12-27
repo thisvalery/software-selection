@@ -101,3 +101,7 @@ function activateSelect2(data) {
         $('.form-control-select2, .block-finder__form-control--select select').select2({width: ''});
     });
 }
+
+function getIntersection(a, b) {
+    return a.filter(x => b.includes(x));
+  }

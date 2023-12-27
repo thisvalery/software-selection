@@ -68,6 +68,8 @@ function addFeaturesProg(data) {
 
     new_ap.querySelector('.zv-f-src-id').innerHTML = data.id
     new_ap.querySelector('.zv-f-src-name').innerHTML = data.name
+    new_ap.querySelector('.zv-f-src-name').setAttribute('href', `/search.html?features[]=${data.id}`)
+    new_ap.querySelector('.zv-href-features').setAttribute('href', `/search.html?features[]=${data.id}`)
 
     return new_ap
 }
@@ -98,3 +100,7 @@ function activateSelect2(data) {
         $('.form-control-select2, .block-finder__form-control--select select').select2({width: ''});
     });
 }
+
+function getIntersection(a, b) {
+    return a.filter(x => b.includes(x));
+  }

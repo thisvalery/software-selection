@@ -15,7 +15,7 @@ fToJson.then(function (resJson) {
 function setDataPage(data) {
     console.log('[setDataPage]', data)
 
-    activateProduct(data) // Заполнение писка программ
+    activateProduct(data, getGetParameters()) // Заполнение писка программ
     activateSelect2(data) // Заполнение формы поиска
     activateSearchForm(getGetParameters())
 }
@@ -52,16 +52,31 @@ function getSkills(data) {
     cost.innerHTML = product.cost
 }
 
-function activateProduct(data) {
+function activateProduct(data, searchParams) {
     // Заполнение программ для аналогов
     let product_template = document.querySelector('.products-list__item')
     let insert_block = product_template.parentNode
 
-    for (let prog of data.program) {
+    // Ранжирование списка программ по поисковому запросу
+    let mapPrograms = data.program.map((prog) => {
+        prog.compliance = getDegreeCompliance(prog, searchParams)
+        return prog
+    })
+    // Сортировка
+    console.log('mapPrograms', mapPrograms)
+    mapPrograms = mapPrograms.sort((a, b) => {
+        let a_c = a.compliance.value / a.compliance.count
+        let b_c = b.compliance.value / b.compliance.count
+        return (a_c < b_c) ? 1 : -1
+    })
+
+    // Вывод сортированного списка
+    for (let prog of mapPrograms) {
         let aap = product_template.cloneNode(true)
         
         // Подстановка названия продукта
-        aap.querySelector('.product-name').innerHTML = prog.name
+        let procent = Math.round((prog.compliance.value / prog.compliance.count) * 100)
+        aap.querySelector('.product-name').innerHTML = `${prog.name} (${procent}%)`
         // Подстановка описания программы
         aap.querySelector('.description').innerHTML = prog.description
         // Подстановка возмоностей
@@ -81,6 +96,51 @@ function activateProduct(data) {
     product_template.parentNode.removeChild(product_template);
 }
 
+function getDegreeCompliance(prog, searchParams) {
+    let degree = {
+        count: 0,
+        value: 0,
+        // compliance: {}
+    }
+
+    if (Object.hasOwn(searchParams, 'features')) {
+        let f = searchParams.features.map((el) => {return Number(el)})
+        let c = getIntersection(f, prog.features)
+
+        degree.count += f.length
+        degree.value += c.length
+    }
+    if (Object.hasOwn(searchParams, 'country')) {
+        if (searchParams.country != "none") {
+            degree.count += 1
+            if (Number(searchParams.country) == prog.country) {
+                degree.value += 1
+            }
+        }
+    }
+    if (Object.hasOwn(searchParams, 'availability')) {
+        if (searchParams.availability != "none") {
+            degree.count += 1
+            let av_bool = (searchParams.availability == "true") ? true : false
+            if (av_bool == prog.availability) {
+                degree.value += 1
+            }
+        }
+    }
+    if (Object.hasOwn(searchParams, 'reestr')) {
+        if (searchParams.reestr != "none") {
+            degree.count += 1
+            let r_bool = (searchParams.reestr == "true") ? true : false
+            if (r_bool == prog.reestr) {
+                degree.value += 1
+            }
+        }
+    }
+
+    // console.log('getDegreeCompliance', degree)
+    return degree
+}
+
 function getGetParameters() {
     var url = new URL(window.location.href);
     let getParam = {}
@@ -98,6 +158,10 @@ function getGetParameters() {
     console.log('url getParam', getParam)
     return getParam
 }
+
+function getIntersection(a, b) {
+    return a.filter(x => b.includes(x));
+  }
 
 function activateSelect2(data) {
     console.log('activateSelect2', data)
