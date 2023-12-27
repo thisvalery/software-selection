@@ -76,7 +76,7 @@ function activateProduct(data, searchParams) {
         
         // Подстановка названия продукта
         let procent = 100
-        if (prog.compliance.value != 0 && prog.compliance.count != 0) {
+        if (prog.compliance.count != 0) {
             procent = Math.round((prog.compliance.value / prog.compliance.count) * 100)
         }
 
@@ -181,7 +181,7 @@ function getGetParameters() {
             getParam[name] = value
         }
     })
-    console.log('url getParam', getParam)
+    // console.log('url getParam', getParam)
     return getParam
 }
 

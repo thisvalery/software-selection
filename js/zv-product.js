@@ -17,7 +17,7 @@ function setDataPage(data) {
 
     activateProduct(data) // Заполнение программ для аналогов
     activateFeaturesProg(data) // Заполнение похожих программ
-    activateSelect2(data) // Заполнение формы поиска
+    // activateSelect2(data) // Заполнение формы поиска
 }
 
 function activateProduct(data) {
@@ -164,7 +164,7 @@ function activateFeaturesProg(data) {
     // Фильтрация маленьких значений соответствич
     mapPrograms = mapPrograms.filter((el) => {
         let procent = 1
-        if (el.compliance.value != 0 && el.compliance.count != 0) {
+        if (el.compliance.count != 0) {
             procent = (el.compliance.value / el.compliance.count)
         }
         return (procent > 0.6)
@@ -185,7 +185,7 @@ function addFeaturesProg(data) {
 
     // Подстановка названия продукта
     let procent = 100
-    if (data.compliance.value != 0 && data.compliance.count != 0) {
+    if (data.compliance.count != 0) {
         procent = Math.round((data.compliance.value / data.compliance.count) * 100)
     }
 
