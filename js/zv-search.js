@@ -69,6 +69,10 @@ function activateProduct(data, searchParams) {
         let b_c = b.compliance.value / b.compliance.count
         return (a_c < b_c) ? 1 : -1
     })
+    // Фильтрация нулевых совпаений
+    mapPrograms = mapPrograms.filter((prog) => {
+        return (prog.compliance.value != 0)
+    })
 
     // Вывод сортированного списка
     for (let prog of mapPrograms) {
