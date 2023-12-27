@@ -87,6 +87,12 @@ function activateProduct(data, searchParams) {
         let features = aap.querySelector('.features')
         for (let s of prog.features) {
             let ns = document.createElement('li')
+
+            let is_compliance = (prog.compliance.compliance.features.indexOf( s ) != -1) ? true : false
+            if (is_compliance) {
+                ns.style.fontWeight = "bold"
+            }
+
             ns.innerHTML = data.skill.find((el) => (el.id == s)).name
             features.append(ns)
         }
@@ -114,12 +120,15 @@ function getDegreeCompliance(prog, searchParams) {
     let degree = {
         count: 0,
         value: 0,
-        // compliance: {}
+        compliance: {
+            features: []
+        }
     }
 
     if (Object.hasOwn(searchParams, 'features')) {
         let f = searchParams.features.map((el) => {return Number(el)})
         let c = getIntersection(f, prog.features)
+        degree.compliance.features = c
 
         degree.count += f.length
         degree.value += c.length
