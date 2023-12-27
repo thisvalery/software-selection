@@ -92,6 +92,16 @@ function activateProduct(data, searchParams) {
         }
         //  Подстановка ID
         aap.querySelector('.zv-f-src-id').innerHTML = prog.id
+        // Подстановка значков
+        if (prog.country == 0) {
+            aap.querySelector(".tag-badge--sale").classList.remove('d-none')
+        }
+        if (prog.availability) {
+            aap.querySelector(".tag-badge--new").classList.remove('d-none')
+        }
+        if (prog.reestr) {
+            aap.querySelector(".tag-badge--hot").classList.remove('d-none')
+        }
 
         // Вставка на страницу
         insert_block.append(aap)
