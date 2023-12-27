@@ -75,7 +75,11 @@ function activateProduct(data, searchParams) {
         let aap = product_template.cloneNode(true)
         
         // Подстановка названия продукта
-        let procent = Math.round((prog.compliance.value / prog.compliance.count) * 100)
+        let procent = 100
+        if (prog.compliance.value != 0 && prog.compliance.count != 0) {
+            procent = Math.round((prog.compliance.value / prog.compliance.count) * 100)
+        }
+
         aap.querySelector('.product-name').innerHTML = `${prog.name} (${procent}%)`
         // Подстановка описания программы
         aap.querySelector('.description').innerHTML = prog.description

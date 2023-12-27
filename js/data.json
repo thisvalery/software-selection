@@ -22,6 +22,7 @@
             "features": [0,1,2],
             "cost": "68 500,00 рублей на 1 пользователя",
             "country": 0,
+            "reestr": true,
             "website": "http://www.basegroup.su/index.php?Page=base.html",
             "description": "Программа BASE - это система общестроительных расчетов, состоит из 6 блоков и приложения. Полной версией программы считаются 6 основных блоков, приложение нужно заказывать дополнительно. При заказе программы BASE можно выбрать только те блоки, которые содержат необходимые функции расчета."
         },
@@ -33,6 +34,7 @@
             "features": [0, 3, 4, 5],
             "cost": "$ 5925/ выплачивается каждые 3 года<br>$ 1,975/ выплачивается ежегодно<br>$ 245/ оплачивается ежемесячно<br>$ 1,975 / год за 1 пользователя",
             "country": 1,
+            "reestr": true,
             "website": "https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription",
             "description": "description description description description"
         },
@@ -44,6 +46,7 @@
             "features": [0, 3, 4, 5],
             "cost": "$ 5925/ выплачивается каждые 3 года<br>$ 1,975/ выплачивается ежегодно<br>$ 245/ оплачивается ежемесячно<br>$ 1,975 / год за 1 пользователя",
             "country": 1,
+            "reestr": false,
             "website": "https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription",
             "description": "description description description description"
         },
@@ -55,6 +58,7 @@
             "features": [0,1,2],
             "cost": "68 500,00 рублей на 1 пользователя",
             "country": 0,
+            "reestr": false,
             "website": "http://www.basegroup.su/index.php?Page=base.html",
             "description": "description description description description"
         }
