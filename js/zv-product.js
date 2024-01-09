@@ -211,8 +211,8 @@ function addFeaturesProg(data) {
 
     new_ap.querySelector('.zv-f-src-id').innerHTML = data.id
     new_ap.querySelector('.zv-f-src-name').innerHTML = `${data.name} (${procent}%)`
-    new_ap.querySelector('.zv-f-src-name').setAttribute('href', `/product.html?id=${data.id}`)
-    new_ap.querySelector('.image__body').setAttribute('href', `/product.html?id=${data.id}`)
+    new_ap.querySelector('.zv-f-src-name').setAttribute('href', `product.html?id=${data.id}`)
+    new_ap.querySelector('.image__body').setAttribute('href', `product.html?id=${data.id}`)
     new_ap.querySelector('img').setAttribute('src', data.logo)
     
     if (data.country == 0) {

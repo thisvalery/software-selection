@@ -42,7 +42,7 @@ function addAnalogProg(data) {
     new_ap.querySelector('img').setAttribute('src', data.logo)
 
     for (let h of new_ap.querySelectorAll('[href]')) {
-        h.setAttribute('href', `/product.html?id=${data.id}`)
+        h.setAttribute('href', `product.html?id=${data.id}`)
         console.log('setAttribute', data.id, h)
     }
     
@@ -69,8 +69,8 @@ function addFeaturesProg(data) {
 
     new_ap.querySelector('.zv-f-src-id').innerHTML = data.id
     new_ap.querySelector('.zv-f-src-name').innerHTML = data.name
-    new_ap.querySelector('.zv-f-src-name').setAttribute('href', `/search.html?features[]=${data.id}`)
-    new_ap.querySelector('.zv-href-features').setAttribute('href', `/search.html?features[]=${data.id}`)
+    new_ap.querySelector('.zv-f-src-name').setAttribute('href', `search.html?features[]=${data.id}`)
+    new_ap.querySelector('.zv-href-features').setAttribute('href', `search.html?features[]=${data.id}`)
 
     return new_ap
 }

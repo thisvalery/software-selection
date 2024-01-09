@@ -114,8 +114,8 @@ function activateProduct(data, searchParams) {
             aap.querySelector(".tag-badge--hot").classList.remove('d-none')
         }
         // Подстановка URl
-        aap.querySelector('.product-name').setAttribute('href', `/product.html?id=${prog.id}`)
-        aap.querySelector('.image__body').setAttribute('href', `/product.html?id=${prog.id}`)
+        aap.querySelector('.product-name').setAttribute('href', `product.html?id=${prog.id}`)
+        aap.querySelector('.image__body').setAttribute('href', `product.html?id=${prog.id}`)
 
         // Вставка на страницу
         insert_block.append(aap)
