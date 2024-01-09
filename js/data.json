@@ -32,8 +32,8 @@
             "reestr": true,
             "website": "http://www.basegroup.su/index.php?Page=base.html",
             "description": "Программа BASE - это система общестроительных расчетов, состоит из 6 блоков и приложения. Полной версией программы считаются 6 основных блоков, приложение нужно заказывать дополнительно. При заказе программы BASE можно выбрать только те блоки, которые содержат необходимые функции расчета.",
-            "logo": "/images/programs/3ds_max_logo.jpg",
-            "imgs": ["/images/programs/3ds_max_1.jpg", "/images/programs/3ds_max_2.jpg"]
+            "logo": "images/programs/3ds_max_logo.jpg",
+            "imgs": ["images/programs/3ds_max_1.jpg", "images/programs/3ds_max_2.jpg"]
         },
         {
             "id": 1,
@@ -46,8 +46,8 @@
             "reestr": true,
             "website": "https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription",
             "description": "description description description description",
-            "logo": "/images/programs/autocad_logo.jpg",
-            "imgs": ["/images/programs/autocad_1.jpg", "/images/programs/autocad_2.jpg"]
+            "logo": "images/programs/autocad_logo.jpg",
+            "imgs": ["images/programs/autocad_1.jpg", "images/programs/autocad_2.jpg"]
         },
         {
             "id": 2,
@@ -60,8 +60,8 @@
             "reestr": false,
             "website": "https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription",
             "description": "description description description description",
-            "logo": "/images/programs/excel_logo.jpg",
-            "imgs": ["/images/programs/excel_1.jpg", "/images/programs/excel_2.jpg"]
+            "logo": "images/programs/excel_logo.jpg",
+            "imgs": ["images/programs/excel_1.jpg", "images/programs/excel_2.jpg"]
         },
         {
             "id": 3,
@@ -74,8 +74,8 @@
             "reestr": false,
             "website": "http://www.basegroup.su/index.php?Page=base.html",
             "description": "description description description description",
-            "logo": "/images/programs/nanocad_logo.jpg",
-            "imgs": ["/images/programs/nanocad_1.jpg", "/images/programs/nanocad_2.jpg"]
+            "logo": "images/programs/nanocad_logo.jpg",
+            "imgs": ["images/programs/nanocad_1.jpg", "images/programs/nanocad_2.jpg"]
         }
     ]
 }
