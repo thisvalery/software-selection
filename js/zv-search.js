@@ -85,6 +85,7 @@ function activateProduct(data, searchParams) {
         }
 
         aap.querySelector('.product-name').innerHTML = `${prog.name} (${procent}%)`
+        aap.querySelector('img').setAttribute('src', prog.logo)
         // Подстановка описания программы
         aap.querySelector('.description').innerHTML = prog.description
         // Подстановка возмоностей

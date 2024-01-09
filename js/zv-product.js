@@ -50,6 +50,26 @@ function activateProduct(data) {
     // Заполнение стоимости
     let cost = document.querySelector('#product-tab-reviews') 
     cost.innerHTML = product.cost
+
+    // Подстановка изображений
+    let arr_imgs_500 = document.querySelectorAll('.zv-img500')
+    for (let i = 0; i < arr_imgs_500.length; i++) {
+        const img_500 = arr_imgs_500[i];
+        if (i == 0) {
+            img_500.querySelector('img').setAttribute('src', product.logo)
+        } else {
+            img_500.querySelector('img').setAttribute('src', product.imgs[i-1])
+        }
+    }
+    let arr_imgs_70 = document.querySelectorAll('.zv-img70')
+    for (let i = 0; i < arr_imgs_70.length; i++) {
+        const img_70 = arr_imgs_70[i];
+        if (i == 0) {
+            img_70.querySelector('img').setAttribute('src', product.logo)
+        } else {
+            img_70.querySelector('img').setAttribute('src', product.imgs[i-1])
+        }
+    }
 }
 
 function getGetParameters() {
@@ -193,6 +213,7 @@ function addFeaturesProg(data) {
     new_ap.querySelector('.zv-f-src-name').innerHTML = `${data.name} (${procent}%)`
     new_ap.querySelector('.zv-f-src-name').setAttribute('href', `/product.html?id=${data.id}`)
     new_ap.querySelector('.image__body').setAttribute('href', `/product.html?id=${data.id}`)
+    new_ap.querySelector('img').setAttribute('src', data.logo)
     
     if (data.country == 0) {
         new_ap.querySelector(".tag-badge--sale").classList.remove('d-none')

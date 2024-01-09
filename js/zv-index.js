@@ -39,6 +39,7 @@ function addAnalogProg(data) {
 
     new_ap.querySelector('.zv-p-src-analogs')
     new_ap.querySelector('.zv-p-src-product').innerHTML = data.name
+    new_ap.querySelector('img').setAttribute('src', data.logo)
 
     for (let h of new_ap.querySelectorAll('[href]')) {
         h.setAttribute('href', `/product.html?id=${data.id}`)

@@ -1,17 +1,24 @@
 {
-    "version": 0.1,
+    "version": 0.8,
     "skill": [
-        {"id": 0, "name": "Блок расчета фундаментов производит расчет"},
-        {"id": 1, "name": "Блок расчета рам и элементов каркаса производит расче"},
-        {"id": 2, "name": "Блок расчета плит и балок на упругом основании производит расчет"},
-        {"id": 3, "name": "Блок специальных расчетов производит расчет"},
-        {"id": 4, "name": "Блок расчетов архитектора производит расчет"},
-        {"id": 5, "name": "Блок справочник-калькулятор производит расчет"}
+        {"id": 1, "name": "Разработка эскизов и чертежей"},
+        {"id": 2, "name": "Проведение расчетов"},
+        {"id": 3, "name": "Создание 3D-моделей"},
+        {"id": 4, "name": "Построение конструктивных сечений"},
+        {"id": 5, "name": "Оптимизация параметров проекта"},
+        {"id": 6, "name": "Совместная работа над проектами"},
+        {"id": 7, "name": "Моделирование поверхностей"},
+        {"id": 8, "name": "Оформление документации"},
+        {"id": 9, "name": "Сравнение чертежей"},
+        {"id": 10, "name": "Наличие БД"},
+        {"id": 11, "name": "Редактирование текстуры"}
+
     ],
     "country": [
         {"id": 0, "name": "Россия"},
         {"id": 1, "name": "США"},
-        {"id": 2, "name": "Украина"}
+        {"id": 2, "name": "Украина"},
+        {"id": 3, "name": "Китай"}
     ],
     "program": [
         {
@@ -19,48 +26,56 @@
             "name": "base", 
             "system_requirements": "<div class=\"spec__row\"><div class=\"spec__name\">Память</div><div class=\"spec__value\">1 ГБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">Видеокарта</div><div class=\"spec__value\">ATI FireGL T2-128</div></div><div class=\"spec__row\"><div class=\"spec__name\">Процессор</div><div class=\"spec__value\">Intel Pentium 4 1,40 ГГц</div></div><div class=\"spec__row\"><div class=\"spec__name\">Размер файла</div><div class=\"spec__value\">30 МБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">ОС</div><div class=\"spec__value\">Microsoft® Windows® XP/Vista/7/10</div></div>",
             "availability": true,
-            "features": [0,1,2],
+            "features": [1,2],
             "cost": "68 500,00 рублей на 1 пользователя",
             "country": 0,
             "reestr": true,
             "website": "http://www.basegroup.su/index.php?Page=base.html",
-            "description": "Программа BASE - это система общестроительных расчетов, состоит из 6 блоков и приложения. Полной версией программы считаются 6 основных блоков, приложение нужно заказывать дополнительно. При заказе программы BASE можно выбрать только те блоки, которые содержат необходимые функции расчета."
+            "description": "Программа BASE - это система общестроительных расчетов, состоит из 6 блоков и приложения. Полной версией программы считаются 6 основных блоков, приложение нужно заказывать дополнительно. При заказе программы BASE можно выбрать только те блоки, которые содержат необходимые функции расчета.",
+            "logo": "/images/programs/3ds_max_logo.jpg",
+            "imgs": ["/images/programs/3ds_max_1.jpg", "/images/programs/3ds_max_2.jpg"]
         },
         {
             "id": 1,
             "name": "Autocad", 
             "system_requirements": "<div class=\"spec__row\"><div class=\"spec__name\">Процессор</div><div class=\"spec__value\">с тактовой частотой выше 3 ГГц</div></div><div class=\"spec__row\"><div class=\"spec__name\">Видеокарта</div><div class=\"spec__value\">с 4 ГБ видеопамяти и поддержкой DirectX 11</div></div><div class=\"spec__row\"><div class=\"spec__name\">Оперативная память</div><div class=\"spec__value\">16 ГБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">Место на диске</div><div class=\"spec__value\">7 ГБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">Операционная система</div><div class=\"spec__value\">Windows 8.1 / 10 64-разрядная</div></div>",
             "availability": false,
-            "features": [0, 3, 4, 5],
+            "features": [3, 4, 5],
             "cost": "$ 5925/ выплачивается каждые 3 года<br>$ 1,975/ выплачивается ежегодно<br>$ 245/ оплачивается ежемесячно<br>$ 1,975 / год за 1 пользователя",
             "country": 1,
             "reestr": true,
             "website": "https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription",
-            "description": "description description description description"
+            "description": "description description description description",
+            "logo": "/images/programs/autocad_logo.jpg",
+            "imgs": ["/images/programs/3ds_max_1.jpg", "/images/programs/3ds_max_2.jpg"]
         },
         {
             "id": 2,
             "name": "Autocad 2", 
             "system_requirements": "<div class=\"spec__row\"><div class=\"spec__name\">Процессор</div><div class=\"spec__value\">с тактовой частотой выше 3 ГГц</div></div><div class=\"spec__row\"><div class=\"spec__name\">Видеокарта</div><div class=\"spec__value\">с 4 ГБ видеопамяти и поддержкой DirectX 11Оперативная память: 16 ГБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">Место на диске</div><div class=\"spec__value\">7 ГБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">Операционная система</div><div class=\"spec__value\">Windows 8.1 / 10 64-разрядная</div></div>",
             "availability": false,
-            "features": [0, 3, 4, 5],
+            "features": [3, 4, 5],
             "cost": "$ 5925/ выплачивается каждые 3 года<br>$ 1,975/ выплачивается ежегодно<br>$ 245/ оплачивается ежемесячно<br>$ 1,975 / год за 1 пользователя",
             "country": 1,
             "reestr": false,
             "website": "https://www.autodesk.com/products/autocad/overview?term=1-YEAR&tab=subscription",
-            "description": "description description description description"
+            "description": "description description description description",
+            "logo": "/images/programs/excel_logo.jpg",
+            "imgs": ["/images/programs/3ds_max_1.jpg", "/images/programs/3ds_max_2.jpg"]
         },
         {
             "id": 3,
             "name": "base 2", 
             "system_requirements": "<div class=\"spec__row\"><div class=\"spec__name\">Память</div><div class=\"spec__value\">1 ГБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">Видеокарта</div><div class=\"spec__value\">ATI FireGL T2-128</div></div><div class=\"spec__row\"><div class=\"spec__name\">Процессор</div><div class=\"spec__value\">Intel Pentium 4 1,40 ГГц</div></div><div class=\"spec__row\"><div class=\"spec__name\">Размер файла</div><div class=\"spec__value\">30 МБ</div></div><div class=\"spec__row\"><div class=\"spec__name\">ОС</div><div class=\"spec__value\">Microsoft® Windows® XP/Vista/7/10</div></div>",
             "availability": true,
-            "features": [0,1,2],
+            "features": [1,2],
             "cost": "68 500,00 рублей на 1 пользователя",
             "country": 0,
             "reestr": false,
             "website": "http://www.basegroup.su/index.php?Page=base.html",
-            "description": "description description description description"
+            "description": "description description description description",
+            "logo": "/images/programs/nanocad_logo.jpg",
+            "imgs": ["/images/programs/3ds_max_1.jpg", "/images/programs/3ds_max_2.jpg"]
         }
     ]
 }
