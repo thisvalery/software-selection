@@ -39,6 +39,33 @@ function activateProduct(data) {
         skill.append(ns)
     }
 
+    
+    // Подстановка
+    let pe =  document.querySelector('.product__excerpt')
+    pe.innerHTML = ""
+    // Сайт производителя
+    pe.innerHTML = `${pe.innerHTML}
+        <a href="${product.website}" class="text-decoration-none">Сайт производителя</a>
+        <br>
+    `
+    // страны производителя
+    let country = data.country.find((el) => (el.id == product.country)).name
+    pe.innerHTML = `${pe.innerHTML}
+        Страна производитель: ${country}
+        <br>
+    `
+    // налаичия в реестре
+    pe.innerHTML = `${pe.innerHTML}
+        Наличие в реестре отечественного ПО: ${(product.reestr) ? "Да" : "Нет"}
+        <br>
+    `
+    // доступности к покупке
+    pe.innerHTML = `${pe.innerHTML}
+        Доступно к покупке: ${(product.availability) ? "Да" : "Нет"}
+        <br>
+    `
+
+
     // Подстановка описания
     let description = document.querySelector('#description')
     description.innerHTML = product.description
