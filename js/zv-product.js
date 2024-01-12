@@ -153,7 +153,6 @@ function getDegreeCompliance(prog, searchParams) {
         let f = searchParams.features.map((el) => {return Number(el)})
         let c = getIntersection(f, prog.features)
         degree.compliance.features = c
-
         degree.count += f.length
         degree.value += c.length
     }
@@ -168,7 +167,10 @@ function getDegreeCompliance(prog, searchParams) {
     if (Object.hasOwn(searchParams, 'availability')) {
         if (searchParams.availability != "none") {
             degree.count += 1
-            let av_bool = (searchParams.availability == "true") ? true : false
+            let av_bool = searchParams.availability 
+            if (typeof searchParams.availability != "boolean") {
+                av_bool = (searchParams.availability == "true") ? true : false
+            }
             if (av_bool == prog.availability) {
                 degree.value += 1
             }
@@ -177,7 +179,10 @@ function getDegreeCompliance(prog, searchParams) {
     if (Object.hasOwn(searchParams, 'reestr')) {
         if (searchParams.reestr != "none") {
             degree.count += 1
-            let r_bool = (searchParams.reestr == "true") ? true : false
+            let r_bool = searchParams.reestr 
+            if (typeof searchParams.reestr != "boolean") {
+                r_bool = (searchParams.reestr == "true") ? true : false
+            }
             if (r_bool == prog.reestr) {
                 degree.value += 1
             }
@@ -215,6 +220,11 @@ function activateFeaturesProg(data) {
             procent = (el.compliance.value / el.compliance.count)
         }
         return (procent > 0.6)
+    })
+
+    // Фильтрация от текущей программы в аналогах
+    mapPrograms = mapPrograms.filter((el) => {
+        return (el.id != getId)
     })
 
     for (let prog of mapPrograms) {

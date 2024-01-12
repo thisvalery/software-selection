@@ -152,7 +152,10 @@ function getDegreeCompliance(prog, searchParams) {
     if (Object.hasOwn(searchParams, 'availability')) {
         if (searchParams.availability != "none") {
             degree.count += 1
-            let av_bool = (searchParams.availability == "true") ? true : false
+            let av_bool = searchParams.availability 
+            if (typeof searchParams.availability != "boolean") {
+                av_bool = (searchParams.availability == "true") ? true : false
+            }
             if (av_bool == prog.availability) {
                 degree.value += 1
             }
@@ -161,7 +164,10 @@ function getDegreeCompliance(prog, searchParams) {
     if (Object.hasOwn(searchParams, 'reestr')) {
         if (searchParams.reestr != "none") {
             degree.count += 1
-            let r_bool = (searchParams.reestr == "true") ? true : false
+            let r_bool = searchParams.reestr 
+            if (typeof searchParams.reestr != "boolean") {
+                r_bool = (searchParams.reestr == "true") ? true : false
+            }
             if (r_bool == prog.reestr) {
                 degree.value += 1
             }
