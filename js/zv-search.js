@@ -17,7 +17,7 @@ function setDataPage(data) {
 
     activateProduct(data, getGetParameters()) // Заполнение писка программ
     activateSelect2(data) // Заполнение формы поиска
-    activateSearchForm(getGetParameters())
+    activateSearchForm(getGetParameters()) // Получение параметров текущего поиска, выполнение происка с полученными параметрами
 }
 
 function getSkills(data) {

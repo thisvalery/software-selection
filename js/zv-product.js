@@ -15,7 +15,7 @@ fToJson.then(function (resJson) {
 function setDataPage(data) {
     console.log('[setDataPage]', data)
 
-    activateProduct(data) // Заполнение программ для аналогов
+    activateProduct(data) // Заполнение данных програмы
     activateFeaturesProg(data) // Заполнение похожих программ
     // activateSelect2(data) // Заполнение формы поиска
 }
